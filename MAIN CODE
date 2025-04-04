@@ -1,0 +1,26 @@
+def main():
+    pin = get_number()
+    locked = True
+    
+    while True:
+        action = input("Enter 'unlock' to open, 'lock' to lock, or 'exit' to quit -> ")
+        if action == 'unlock':
+            attempt = input("Enter PIN -> ")
+            if attempt == pin:
+                locked = False
+                print("Lock Box Unlocked!")
+            else:
+                print("Incorrect PIN. Try again.")
+        elif action == 'lock':
+            locked = True
+            print("Lock Box Locked.")
+        elif action == 'exit':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid Input. Try again.")
+
+def get_number():
+    return input("Set a 4-digit PIN -> ")
+
+main()
